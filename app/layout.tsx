@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ColorBends from "./components/ColorBends";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata: Metadata = {
   title: "Alice Marybeth | Portfolio",
@@ -14,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen bg-black">
+      <body className={`${poppins.className} relative min-h-screen bg-black`}>
 
         {/* Global Animated Background */}
         <div className="fixed inset-0 -z-10 opacity-30">

@@ -1,13 +1,11 @@
 "use client";
 
 import React from "react";
-import ColorBends from "./ColorBends";
 import RotatingText from "./RotatingText";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center">
-
+    <section id="home" className="relative w-full h-screen flex items-center justify-center">
       {/* Hero Content */}
       <div className="flex flex-col items-center text-center text-white px-4 gap-6">
 
