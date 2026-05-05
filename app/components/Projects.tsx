@@ -12,17 +12,19 @@ const projects = [
     description:
       "Developed a fintech website with a focus on user-friendly design and functionality. Achieved Top 3 Best Project at a local media summit.",
     tech: ["React", "Tailwind CSS"],
-    image: "/Alice.jpeg",
+     image: "/Finovate (2).png",
     badge: "🏆 Top 3 Best Project",
+    link: "https://finovate-tawny.vercel.app/",
   },
   {
     title: "Kintara Website",
     role: "Frontend Developer — Garuda Hacks 6.0",
     description:
       "Finalist (Top 7 of 133 Teams) in the Connecting Culture track at Garuda Hacks 6.0, contributing as a Fullstack Developer.",
-    tech: ["Alpine", "Laravel", "Tailwind CSS"],
-    image: "/Alice.jpeg",
+    tech: ["PHP", "Laravel", "Tailwind CSS"],
+    image: "/Pomodoro.png",
     badge: "🥇 Top 7 of 133 Teams",
+    link: "",
   },
   {
     title: "Pomodoro Focus Mobile App",
@@ -30,8 +32,9 @@ const projects = [
     description:
       "Built backend functionality to connect To-Do List and Activity pages, enabling real-time task tracking.",
     tech: ["Java", "Kotlin", "Spring Boot"],
-    image: "/Alice.jpeg",
+    image: "/Pomodoro.png",
     badge: null,
+    link: "",
   },
 ];
 
@@ -73,40 +76,58 @@ export default function Projects() {
             className="flex flex-col gap-4"
           >
             {/* Tilted Card Image */}
-            <TiltedCard
-              imageSrc={project.image}
-              altText={project.title}
-              captionText={project.title}
-              containerHeight="220px"
-              imageHeight="220px"
-              imageWidth="100%"
-              scaleOnHover={1.05}
-              rotateAmplitude={10}
-              showMobileWarning={false}
-            />
+            <a
+              href={project.link || undefined}
+              target={project.link ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className={
+                project.link
+                  ? "cursor-pointer"
+                  : "cursor-default pointer-events-none"
+              }
+            >
+              <TiltedCard
+                imageSrc={project.image}
+                altText={project.title}
+                captionText={project.title}
+                containerHeight="220px"
+                imageHeight="220px"
+                imageWidth="100%"
+                scaleOnHover={1.05}
+                rotateAmplitude={10}
+                showMobileWarning={false}
+              />
+            </a>
 
             {/* Project Info */}
             <div className="flex flex-col gap-2 px-1">
-
-              {/* Badge */}
               {project.badge && (
                 <span className="text-xs text-yellow-400 font-semibold">
                   {project.badge}
                 </span>
               )}
 
-              {/* Title */}
-              <h3 className="text-white font-bold text-lg">{project.title}</h3>
+              <h3 className="text-white font-bold text-lg">
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors duration-300"
+                  >
+                    {project.title} ↗
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
 
-              {/* Role */}
               <p className="text-blue-400 text-sm">{project.role}</p>
 
-              {/* Description */}
               <p className="text-white/50 text-sm leading-relaxed">
                 {project.description}
               </p>
 
-              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mt-1">
                 {project.tech.map((t) => (
                   <span
@@ -117,7 +138,6 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-
             </div>
           </motion.div>
         ))}

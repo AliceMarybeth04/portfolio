@@ -2,6 +2,7 @@
 
 import React from "react";
 import ColorBends from "./ColorBends";
+import RotatingText from "./RotatingText";
 
 export default function Hero() {
   return (
@@ -20,10 +21,15 @@ export default function Hero() {
           Hi, I'm <span className="text-blue-300">Alice Marybeth</span>
         </h1>
 
-        {/* Role */}
-        <p className="text-2xl md:text-3xl font-light text-white/80">
-          Full Stack Developer
-        </p>
+        {/* Rotating Role */}
+        <div className="flex items-center gap-3 text-2xl md:text-3xl font-light text-white/80">
+          <span>Interested in</span>
+          <RotatingText
+            texts={["Project Manager", "Frontend Developer", "Backend Developer"]}
+            mainClassName="px-3 py-1 bg-blue-500/20 border border-blue-400/40 rounded-full text-blue-300"
+            rotationInterval={2500}
+          />
+        </div>
 
         {/* Short bio */}
         <p className="max-w-xl text-white/60 text-base md:text-lg leading-relaxed">
