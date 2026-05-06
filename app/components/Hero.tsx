@@ -5,7 +5,7 @@ import RotatingText from "./RotatingText";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full h-screen flex items-center justify-center">
+    <section id="home" className="relative w-full h-screen flex items-center justify-center pb-0">
       {/* Hero Content */}
       <div className="flex flex-col items-center text-center text-white px-4 gap-6">
 
@@ -20,7 +20,7 @@ export default function Hero() {
         </h1>
 
         {/* Rotating Role */}
-        <div className="flex items-center gap-3 text-2xl md:text-3xl font-light text-white/80">
+        <div className="flex items-center gap-3 text-xl md:text-2xl font-light text-white/80">
           <span>Interested in</span>
           <RotatingText
             texts={["Project Manager", "Frontend Developer", "Backend Developer"]}
