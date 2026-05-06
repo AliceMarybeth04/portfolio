@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import BlurText from "./BlurText";
 
@@ -101,7 +101,6 @@ export default function Involvement() {
         >
           Experience
         </motion.p>
-
         <BlurText
           text="Involvements"
           className="text-4xl md:text-5xl font-bold text-white"
@@ -135,39 +134,34 @@ export default function Involvement() {
               {/* Card */}
               <div className="bg-white/5 border border-white/10 hover:border-blue-400/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,100,255,0.1)]">
 
-                {/* Header */}
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                {/* Header — desktop: judul kiri badge kanan, mobile: semua kebawah */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+
+                  {/* Left — title, org, location */}
                   <div className="flex flex-col gap-1">
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">
-                      </span>
-
-                      <h3 className="text-white font-bold text-lg leading-tight">
-                        {item.title}
-                      </h3>
-                    </div>
-
+                    <h3 className="text-white font-bold text-lg leading-tight">
+                      {item.title}
+                    </h3>
                     <p className="text-blue-400 text-sm font-medium">
                       {item.organization}
                     </p>
-
                     <p className="text-white/40 text-xs">
                       {item.location}
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-end gap-2">
+                  {/* Right — badge + period (desktop: kanan, mobile: kiri bawah judul) */}
+                  <div className="flex md:flex-col flex-row flex-wrap md:items-end items-center gap-2">
                     <span
                       className={`text-xs px-3 py-1 rounded-full border ${typeConfig[item.type].color}`}
                     >
                       {typeConfig[item.type].label}
                     </span>
-
-                    <span className="text-white/40 text-xs text-right">
+                    <span className="text-white/40 text-xs md:text-right">
                       {item.period}
                     </span>
                   </div>
+
                 </div>
 
                 {/* Descriptions */}
@@ -177,10 +171,7 @@ export default function Involvement() {
                       key={j}
                       className="flex gap-2 text-white/60 text-sm leading-relaxed"
                     >
-                      <span className="text-blue-400 mt-1 flex-shrink-0">
-                        ●
-                      </span>
-
+                      <span className="text-blue-400 mt-1 flex-shrink-0">●</span>
                       <span>{desc}</span>
                     </li>
                   ))}
@@ -223,7 +214,6 @@ export default function Involvement() {
               exit={{ opacity: 0 }}
               onClick={() => setLightbox(null)}
             />
-
             <motion.div
               className="fixed inset-0 z-50 flex items-center justify-center p-8"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -239,7 +229,6 @@ export default function Involvement() {
                   className="object-contain rounded-2xl"
                 />
               </div>
-
               <button
                 onClick={() => setLightbox(null)}
                 className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-all duration-200"
@@ -250,6 +239,7 @@ export default function Involvement() {
           </>
         )}
       </AnimatePresence>
+
     </section>
   );
 }
