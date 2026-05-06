@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import SkillsMarquee from "./components/SkillsMarquee";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Involvement from "./components/Involvement";
 import Contact from "./components/Contact";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <SkillsMarquee />
       <About />
       <Projects />
+      <Involvement/>
       <Contact />
     </main>
   );

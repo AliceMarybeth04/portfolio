@@ -12,7 +12,7 @@ const projects = [
     description:
       "Developed a fintech website with a focus on user-friendly design and functionality. Achieved Top 3 Best Project at a local media summit.",
     tech: ["React", "Tailwind CSS"],
-     image: "/Finovate (2).png",
+     image: "/Finovatee.png",
     badge: "🏆 Top 3 Best Project",
     link: "https://finovate-tawny.vercel.app/",
   },
@@ -20,9 +20,9 @@ const projects = [
     title: "Kintara Website",
     role: "Frontend Developer — Garuda Hacks 6.0",
     description:
-      "Finalist (Top 7 of 133 Teams) in the Connecting Culture track at Garuda Hacks 6.0, contributing as a Fullstack Developer.",
+      "Finalist (Top 7 of 133 Teams) in the Connecting Culture track at Garuda Hacks 6.0, contributing as a Frontend Developer.",
     tech: ["PHP", "Laravel", "Tailwind CSS"],
-    image: "/Pomodoro.png",
+    image: "/Kintara2.png",
     badge: "🥇 Top 7 of 133 Teams",
     link: "",
   },
